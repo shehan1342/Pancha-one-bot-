@@ -1,0 +1,19 @@
+{
+  "name": "pancha-one-bot",
+  "version": "1.0.0",
+  "description": "An advanced WhatsApp bot with session login, moderation, downloads, and AI.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@whiskeysockets/baileys": "^6.5.0",
+    "mongoose": "^7.3.0",
+    "axios": "^1.4.0",
+    "node-fetch": "^3.3.2",
+    "chalk": "^5.3.0",
+    "dotenv": "^16.3.1",
+    "openai": "^4.18.0",
+    "ytdl-core": "^4.11.3"
+  }
+}
