@@ -4,14 +4,23 @@ const { default: makeWASocket } = require('@whiskeysockets/baileys');
 const config = require('./config');
 const path = require('path');
 
-// MongoDB Connect
+// 👉 Health check HTTP server for Koyeb
+const http = require('http');
+http.createServer((req, res) => {
+  res.writeHead(200, {'Content-Type': 'text/plain'});
+  res.end('Bot is running\n');
+}).listen(8000, () => {
+  console.log('✅ Health check server running on port 8000');
+});
+
+// 👉 MongoDB Connect
 connectToMongo();
 
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState(path.join(__dirname, './session'));
   const sock = makeWASocket({
     auth: state,
-    printQRInTerminal: true,
+    printQRInTerminal: true, // 🟡 This will show a warning (deprecated)
   });
 
   sock.ev.on('creds.update', saveCreds);
