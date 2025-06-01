@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@whiskeysockets/baileys": "^6.5.0",
+    "@whiskeysockets/baileys": "^6.7.17",
     "mongoose": "^7.3.0",
     "axios": "^1.4.0",
     "node-fetch": "^3.3.2",
